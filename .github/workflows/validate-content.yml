@@ -19,6 +19,8 @@ jobs:
           node -e "JSON.parse(require('fs').readFileSync('content/catalog.json', 'utf8'))"
           node -e "JSON.parse(require('fs').readFileSync('content/resources/recommended.json', 'utf8'))"
           node -e "JSON.parse(require('fs').readFileSync('content/courses/CSE-1103/course.json', 'utf8'))"
+          node -e "JSON.parse(require('fs').readFileSync('content/courses/CSE-1103/assessments/quiz.json', 'utf8'))"
+          node -e "JSON.parse(require('fs').readFileSync('content/courses/CSE-1103/resources.json', 'utf8'))"
 
       - name: Check required content
         run: |
