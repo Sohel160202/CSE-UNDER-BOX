@@ -11,7 +11,7 @@ The current shell:
 - Links students back to the source repository.
 - Uses fallback data if the remote manifest is temporarily unavailable.
 
-The future Windows application will package this interface with a lightweight desktop wrapper and add:
+The future cross-platform desktop application will package this interface with a lightweight desktop wrapper and add:
 
 - GitHub Release package downloads
 - SHA-256 verification
