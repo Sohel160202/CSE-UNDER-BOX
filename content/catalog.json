@@ -10,9 +10,13 @@
       "version": "0.1.0",
       "packageAsset": null,
       "contentPath": "content/courses/CSE-1103",
+      "sourceRepository": "https://github.com/Sohel160202/CSE-UNDER-BOX/tree/main/content/courses/CSE-1103",
       "lessonCount": 2,
       "resourceCount": 0,
-      "downloadable": false
+      "downloadable": false,
+      "downloadReady": false,
+      "releaseTag": null,
+      "sha256": null
     },
     {
       "courseId": "CSE-1104",
@@ -21,9 +25,13 @@
       "version": null,
       "packageAsset": null,
       "contentPath": null,
+      "sourceRepository": "https://github.com/Sohel160202/CSE-UNDER-BOX",
       "lessonCount": 0,
       "resourceCount": 0,
-      "downloadable": false
+      "downloadable": false,
+      "downloadReady": false,
+      "releaseTag": null,
+      "sha256": null
     }
   ],
   "downloadPolicy": {
