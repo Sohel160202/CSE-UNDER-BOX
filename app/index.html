@@ -233,21 +233,49 @@ function render() {
     button.addEventListener("click", function() { openCourse(button.dataset.course); });
   });
 }
-function openCourse(id) {
+async function openCourse(id) {
   const course = curriculum.terms.flatMap(function(t) { return t.courses; }).find(function(c) { return c.id === id; });
   if (!course) return;
   const detail = document.getElementById("detail");
   const preview = id === "CSE-1103";
   const sourceUrl = "https://github.com/Sohel160202/CSE-UNDER-BOX/tree/main/content/courses/" + id;
-  const action = preview
-    ? '<a class="resource-link" href="' + sourceUrl + '" target="_blank">Open course source ↗</a>'
-    : '<button class="course-action" id="planned-action">Coming next</button>';
-  detail.innerHTML = '<div class="detail-top"><div><div class="eyebrow">' + esc(course.id) + ' · ' + esc(course.kind) + '</div><h3>' + esc(course.title) + '</h3><p>' + (preview ? "This source-preview course is the first content package in development. It will become downloadable through a GitHub Release after the lesson, lab, quiz, and package validation pass." : "This course is mapped in the curriculum catalog and will receive its own versioned GitHub course package.") + '</p></div><button class="detail-close" aria-label="Close">×</button></div>' +
-    '<div class="lesson-grid"><div class="lesson-card"><h4>Learning experience</h4><ul><li>Concept explanations with visual diagrams</li><li>Code examples and debugging exercises</li><li>Laboratory activities and assessed projects</li><li>Progress tracked independently from the course package</li></ul></div><div class="resource-card"><div><h4>' + (preview ? "Package status" : "Course status") + '</h4><p>' + (preview ? "Source files available" : "Not packaged yet") + '</p></div>' + action + '</div></div>';
+  let manifest = {lessons: [], labs: [], assessments: [], externalResources: []};
+  if (preview) {
+    try {
+      const response = await fetch("https://raw.githubusercontent.com/Sohel160202/CSE-UNDER-BOX/main/content/courses/" + id + "/course.json");
+      if (response.ok) manifest = await response.json();
+    } catch (error) {
+      toast("Course manifest is temporarily unavailable.");
+    }
+  }
+  const lessonRows = manifest.lessons.map(function(lesson, index) {
+    return '<div class="course"><div class="course-code">' + String(index + 1).padStart(2, "0") + '</div><div><div class="course-title">' + esc(lesson.title) + '</div><div class="course-meta">Interactive lesson · Markdown source</div></div><button class="course-action lesson-action" data-lesson="' + esc(lesson.path) + '" data-title="' + esc(lesson.title) + '">Open</button></div>';
+  }).join("");
+  const labRows = manifest.labs.map(function(path, index) {
+    return '<div class="course"><div class="course-code">LAB-' + String(index + 1).padStart(2, "0") + '</div><div><div class="course-title">' + esc(path.split("/").pop().replace(".md", "").replaceAll("-", " ")) + '</div><div class="course-meta">Laboratory assignment</div></div><a class="resource-link" target="_blank" href="https://github.com/Sohel160202/CSE-UNDER-BOX/blob/main/content/courses/' + id + '/' + path + '">View ↗</a></div>';
+  }).join("");
+  detail.innerHTML = '<div class="detail-top"><div><div class="eyebrow">' + esc(course.id) + ' · ' + esc(course.kind) + '</div><h3>' + esc(course.title) + '</h3><p>' + (preview ? "The first complete course package is now connected to the GitHub content repository." : "This course is mapped in the curriculum catalog and will receive its own versioned GitHub course package.") + '</p></div><button class="detail-close" aria-label="Close">×</button></div>' +
+    '<div class="lesson-grid"><div class="lesson-card"><h4>Lessons</h4><div class="course-list">' + (lessonRows || '<p>No lessons packaged yet.</p>') + '</div></div><div><div class="lesson-card"><h4>Course package</h4><ul><li>' + (manifest.lessons.length || 0) + ' lessons</li><li>' + (manifest.labs.length || 0) + ' laboratory assignments</li><li>' + (manifest.assessments.length || 0) + ' assessment files</li><li>GitHub-backed versioned content</li></ul><a class="resource-link" href="' + sourceUrl + '" target="_blank">Open full course source ↗</a></div><div class="lesson-card" style="margin-top:16px"><h4>Laboratories</h4><div class="course-list">' + (labRows || '<p>No laboratories packaged yet.</p>') + '</div></div></div></div>';
   detail.classList.add("visible");
   detail.querySelector(".detail-close").addEventListener("click", function() { detail.classList.remove("visible"); });
-  const planned = detail.querySelector("#planned-action");
-  if (planned) planned.addEventListener("click", function() { toast("This course is mapped and will be packaged in a future GitHub Release."); });
+  detail.querySelectorAll(".lesson-action").forEach(function(button) {
+    button.addEventListener("click", function() { openLesson(id, button.dataset.lesson, button.dataset.title); });
+  });
+  detail.scrollIntoView({behavior:"smooth", block:"start"});
+}
+async function openLesson(courseId, lessonPath, lessonTitle) {
+  const detail = document.getElementById("detail");
+  const rawUrl = "https://raw.githubusercontent.com/Sohel160202/CSE-UNDER-BOX/main/content/courses/" + courseId + "/" + lessonPath;
+  detail.innerHTML = '<div class="detail-top"><div><div class="eyebrow">' + esc(courseId) + ' · Lesson</div><h3>' + esc(lessonTitle) + '</h3></div><button class="detail-close" aria-label="Close">×</button></div><div class="lesson-card"><p>Loading lesson from GitHub…</p></div>';
+  detail.classList.add("visible");
+  detail.querySelector(".detail-close").addEventListener("click", function() { detail.classList.remove("visible"); });
+  try {
+    const response = await fetch(rawUrl);
+    const markdown = response.ok ? await response.text() : "The lesson is not available yet.";
+    detail.querySelector(".lesson-card").innerHTML = '<pre style="white-space:pre-wrap;color:var(--muted);line-height:1.65;font:13px ui-monospace,SFMono-Regular,Menlo,monospace">' + esc(markdown) + '</pre><a class="resource-link" href="https://github.com/Sohel160202/CSE-UNDER-BOX/blob/main/content/courses/' + courseId + '/' + lessonPath + '" target="_blank">Open source file ↗</a>';
+  } catch (error) {
+    detail.querySelector(".lesson-card").innerHTML = "<p>GitHub is temporarily unavailable. Open the source file to continue.</p>";
+  }
   detail.scrollIntoView({behavior:"smooth", block:"start"});
 }
 function toast(message) {
