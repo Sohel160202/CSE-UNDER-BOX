@@ -1,0 +1,36 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "CSE Under Box",
+  "version": "0.1.0",
+  "identifier": "com.sohel160202.cseunderbox",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "CSE Under Box",
+        "width": 1440,
+        "height": 920,
+        "minWidth": 980,
+        "minHeight": 700,
+        "resizable": true
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "shortDescription": "Interactive undergraduate CSE learning system",
+    "longDescription": "A visual, practical, GitHub-first learning system for the complete undergraduate Computer Science and Engineering curriculum.",
+    "category": "Education",
+    "copyright": "Copyright 2026 Sheikh Sohel Moon",
+    "createUpdaterArtifacts": false
+  }
+}
