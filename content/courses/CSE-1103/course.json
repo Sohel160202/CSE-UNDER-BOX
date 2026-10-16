@@ -4,20 +4,104 @@
   "version": "0.1.0",
   "credits": 2,
   "kind": "theory",
-  "status": "source-preview",
-  "description": "An introductory course in computer programming, algorithmic thinking, flowcharts, C programming, control structures, arrays, strings, functions, structures, and unions.",
+  "status": "source-preview-complete",
+  "description": "A complete introductory programming course covering computer fundamentals, number systems, algorithms, flowcharts, C programming, control flow, arrays, strings, functions, pointers, structures, unions, debugging, testing, and a practical capstone.",
   "learningOutcomes": [
     "Explain the relationship between computer hardware, software, and programming languages.",
     "Construct algorithms and flowcharts for simple problems.",
     "Write, compile, test, and debug C programs.",
     "Use variables, data types, operators, expressions, conditions, and loops.",
-    "Implement programs using arrays, strings, functions, structures, and unions."
+    "Implement programs using arrays, strings, functions, pointers, structures, and unions.",
+    "Design and document a small command-line software project."
   ],
   "lessons": [
-    {"id":"cse1103-01","title":"Computers, Programs, and Problem Solving","path":"lessons/01-computers-programs-problem-solving/lesson.md","status":"draft"},
-    {"id":"cse1103-02","title":"Algorithms and Flowcharts","path":"lessons/02-algorithms-and-flowcharts/lesson.md","status":"draft"}
+    {
+      "id": "cse1103-01",
+      "title": "Computers, Programs, and Problem Solving",
+      "path": "lessons/01-computers-programs-problem-solving/lesson.md",
+      "status": "draft"
+    },
+    {
+      "id": "cse1103-02",
+      "title": "Algorithms and Flowcharts",
+      "path": "lessons/02-algorithms-and-flowcharts/lesson.md",
+      "status": "draft"
+    },
+    {
+      "id": "cse1103-03",
+      "title": "Number Systems and C Foundations",
+      "path": "lessons/03-number-systems-and-c-foundations/lesson.md",
+      "status": "draft"
+    },
+    {
+      "id": "cse1103-04",
+      "title": "Data Types, Input, Output, and Expressions",
+      "path": "lessons/04-data-types-input-output-and-expressions/lesson.md",
+      "status": "draft"
+    },
+    {
+      "id": "cse1103-05",
+      "title": "Decision Making",
+      "path": "lessons/05-decision-making/lesson.md",
+      "status": "draft"
+    },
+    {
+      "id": "cse1103-06",
+      "title": "Loops and Repetition",
+      "path": "lessons/06-loops-and-repetition/lesson.md",
+      "status": "draft"
+    },
+    {
+      "id": "cse1103-07",
+      "title": "Arrays and Strings",
+      "path": "lessons/07-arrays-and-strings/lesson.md",
+      "status": "draft"
+    },
+    {
+      "id": "cse1103-08",
+      "title": "Functions and Program Design",
+      "path": "lessons/08-functions-and-program-design/lesson.md",
+      "status": "draft"
+    },
+    {
+      "id": "cse1103-09",
+      "title": "Pointers, Memory, and Scope",
+      "path": "lessons/09-pointers-memory-and-scope/lesson.md",
+      "status": "draft"
+    },
+    {
+      "id": "cse1103-10",
+      "title": "Structures, Unions, and Data Modeling",
+      "path": "lessons/10-structures-unions-and-data-modeling/lesson.md",
+      "status": "draft"
+    },
+    {
+      "id": "cse1103-11",
+      "title": "Debugging, Testing, and Program Quality",
+      "path": "lessons/11-debugging-testing-and-quality/lesson.md",
+      "status": "draft"
+    },
+    {
+      "id": "cse1103-12",
+      "title": "Capstone: Student Result Manager",
+      "path": "lessons/12-capstone-student-result-manager/lesson.md",
+      "status": "draft"
+    }
   ],
-  "externalResources": [],
+  "labs": [
+    "labs/lab-01-input-output.md",
+    "labs/lab-02-decisions.md",
+    "labs/lab-03-loops.md",
+    "labs/lab-04-arrays-strings.md",
+    "labs/lab-05-functions-pointers.md",
+    "labs/lab-06-structures.md"
+  ],
+  "assessments": [
+    "assessments/quiz.json"
+  ],
+  "externalResources": [
+    "resources.json"
+  ],
   "package": {
     "releaseAsset": null,
     "sha256": null,
