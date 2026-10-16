@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "1.0.0",
+  "resources": [
+    {
+      "id": "youtube-mit-6006-lecture-1",
+      "title": "Algorithms and Computation",
+      "url": "https://www.youtube.com/watch?v=ZA-tUyM_y7s",
+      "platform": "YouTube",
+      "channel": "MIT OpenCourseWare",
+      "courseIds": ["CSE-2201"],
+      "topicIds": ["algorithms", "data-structures", "models-of-computation"],
+      "language": "English",
+      "level": "undergraduate",
+      "type": "university-lecture",
+      "reviewStatus": "candidate",
+      "lastVerified": "2026-10-16",
+      "note": "Useful supplementary lecture for the beginning of Algorithms."
+    },
+    {
+      "id": "youtube-mit-6006-lecture-2",
+      "title": "Data Structures and Dynamic Arrays",
+      "url": "https://www.youtube.com/watch?v=CHhwJjR0mZA",
+      "platform": "YouTube",
+      "channel": "MIT OpenCourseWare",
+      "courseIds": ["CSE-2101", "CSE-2201"],
+      "topicIds": ["data-structures", "dynamic-arrays"],
+      "language": "English",
+      "level": "undergraduate",
+      "type": "university-lecture",
+      "reviewStatus": "candidate",
+      "lastVerified": "2026-10-16",
+      "note": "Use after students understand arrays and basic algorithmic operations."
+    },
+    {
+      "id": "neso-academy-c-programming-playlist",
+      "title": "C Programming",
+      "url": "https://www.youtube.com/@nesoacademy/playlists",
+      "platform": "YouTube",
+      "channel": "Neso Academy",
+      "courseIds": ["CSE-1103", "CSE-1203"],
+      "topicIds": ["c-programming", "structured-programming"],
+      "language": "English",
+      "level": "beginner-to-undergraduate",
+      "type": "playlist-hub",
+      "reviewStatus": "candidate",
+      "lastVerified": "2026-10-16",
+      "note": "Review individual videos before marking a core recommendation."
+    }
+  ]
+}
