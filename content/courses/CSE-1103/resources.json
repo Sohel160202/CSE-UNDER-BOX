@@ -1,0 +1,16 @@
+{
+  "courseId": "CSE-1103",
+  "resources": [
+    {
+      "id": "neso-c-programming",
+      "title": "C Programming playlist",
+      "url": "https://www.youtube.com/@nesoacademy/playlists",
+      "platform": "YouTube",
+      "channel": "Neso Academy",
+      "topics": ["C foundations", "control flow", "arrays", "functions"],
+      "language": "English",
+      "status": "candidate",
+      "note": "Review individual videos before marking core."
+    }
+  ]
+}
