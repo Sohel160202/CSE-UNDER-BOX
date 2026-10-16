@@ -1,0 +1,17 @@
+{
+  "assessmentId": "cse1103-final-quiz",
+  "title": "Structured Programming I Concept Check",
+  "passingScore": 70,
+  "questions": [
+    {"id":1,"type":"multiple-choice","question":"Which function is the normal entry point of a C program?","options":["start","main","run","begin"],"answer":"main"},
+    {"id":2,"type":"multiple-choice","question":"What does an algorithm describe?","options":["A sequence of steps for solving a problem","Only the final output","A computer brand","A compiler error"],"answer":"A sequence of steps for solving a problem"},
+    {"id":3,"type":"multiple-choice","question":"Which operator obtains an address?","options":["*","&","->","%"],"answer":"&"},
+    {"id":4,"type":"multiple-choice","question":"What is the first valid index of a C array?","options":["0","1","-1","The array length"],"answer":"0"},
+    {"id":5,"type":"multiple-choice","question":"Which loop is guaranteed to run at least once?","options":["for","while","do-while","None"],"answer":"do-while"},
+    {"id":6,"type":"multiple-choice","question":"What terminates a C string?","options":["A space","The null character","A newline only","A comma"],"answer":"The null character"},
+    {"id":7,"type":"multiple-choice","question":"What does a structure provide?","options":["A group of related members","Only one integer","A loop","A compiler"],"answer":"A group of related members"},
+    {"id":8,"type":"multiple-choice","question":"Which is a logic error?","options":["Missing semicolon","Incorrect average formula","Unknown keyword","Unclosed comment"],"answer":"Incorrect average formula"},
+    {"id":9,"type":"multiple-choice","question":"Why are boundary tests useful?","options":["They test values near valid limits","They make code longer","They replace compilation","They remove all input"],"answer":"They test values near valid limits"},
+    {"id":10,"type":"multiple-choice","question":"What does a pointer store?","options":["An address","Only a character","A loop count","A file name"],"answer":"An address"}
+  ]
+}
