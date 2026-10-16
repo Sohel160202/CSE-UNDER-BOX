@@ -2,9 +2,9 @@
 
 ## Product layers
 
-### 1. Desktop launcher
+### 1. Cross-platform desktop launcher
 
-The Windows application is the student's entry point. It owns:
+The application is the student's entry point on Windows, macOS, and Linux. It owns:
 
 - Curriculum browsing
 - Search and filtering
@@ -77,7 +77,9 @@ The application should gracefully handle removed or unavailable videos.
 
 - Source and small text assets: normal Git history
 - Course packages: GitHub Release assets
-- Windows installer: GitHub Release asset
+- Windows installer: GitHub Release asset (.exe or .msi)
+- macOS installer: GitHub Release asset (.dmg or .app)
+- Linux packages: GitHub Release assets (AppImage, .deb, or .rpm)
 - Large media: package archives, not thousands of individual Git blobs
 - Manifest: small JSON file fetched from the default branch or a tagged release
 
@@ -88,6 +90,20 @@ Application: 0.1.0
 Course package: CSE-1103@0.1.0
 Catalog schema: 1.0.0
 ```
+
+## Platform strategy
+
+The application will use one shared frontend and one shared content contract. Platform-specific code will be limited to packaging, filesystem paths, update installation, and native integrations.
+
+The planned wrapper is Tauri because it supports Windows, macOS, and Linux from one codebase while using the operating system's web renderer. The same GitHub content catalog and course packages will be used by every platform.
+
+Platform-specific release targets:
+
+- Windows: setup executable and optional MSI
+- macOS: DMG and app bundle; signing and notarization will be required for polished distribution
+- Linux: AppImage first, followed by Debian/RPM packages if needed
+
+The first release will target modern 64-bit systems. Architecture-specific builds can be added later where practical.
 
 ## Content authoring rules
 
