@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="220" viewBox="0 0 1100 220" role="img" aria-labelledby="title desc">
+  <title id="title">From problem to running program</title>
+  <desc id="desc">A five-step pipeline from problem analysis to program output.</desc>
+  <rect width="1100" height="220" rx="24" fill="#f8fafc"/>
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <g fill="#ffffff" stroke="#cdddf7" stroke-width="2">
+      <rect x="30" y="70" width="170" height="80" rx="16"/><rect x="245" y="70" width="170" height="80" rx="16"/>
+      <rect x="460" y="70" width="170" height="80" rx="16"/><rect x="675" y="70" width="170" height="80" rx="16"/>
+      <rect x="890" y="70" width="170" height="80" rx="16"/>
+    </g>
+    <g fill="#2864d7" font-size="17" font-weight="700">
+      <text x="115" y="104">Problem</text><text x="330" y="104">Algorithm</text>
+      <text x="545" y="104">Source Code</text><text x="760" y="104">Compiler</text><text x="975" y="104">Output</text>
+    </g>
+    <g fill="#718096" font-size="12">
+      <text x="115" y="127">what to solve</text><text x="330" y="127">precise steps</text>
+      <text x="545" y="127">C instructions</text><text x="760" y="127">translation</text><text x="975" y="127">tested result</text>
+    </g>
+    <g fill="none" stroke="#7758d8" stroke-width="3" stroke-linecap="round">
+      <path d="M205 110h30m-8-8 8 8-8 8M420 110h30m-8-8 8 8-8 8M635 110h30m-8-8 8 8-8 8M850 110h30m-8-8 8 8-8 8"/>
+    </g>
+  </g>
+</svg>
