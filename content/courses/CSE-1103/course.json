@@ -1,0 +1,26 @@
+{
+  "courseId": "CSE-1103",
+  "title": "Structured Programming I",
+  "version": "0.1.0",
+  "credits": 2,
+  "kind": "theory",
+  "status": "source-preview",
+  "description": "An introductory course in computer programming, algorithmic thinking, flowcharts, C programming, control structures, arrays, strings, functions, structures, and unions.",
+  "learningOutcomes": [
+    "Explain the relationship between computer hardware, software, and programming languages.",
+    "Construct algorithms and flowcharts for simple problems.",
+    "Write, compile, test, and debug C programs.",
+    "Use variables, data types, operators, expressions, conditions, and loops.",
+    "Implement programs using arrays, strings, functions, structures, and unions."
+  ],
+  "lessons": [
+    {"id":"cse1103-01","title":"Computers, Programs, and Problem Solving","path":"lessons/01-computers-programs-problem-solving/lesson.md","status":"draft"},
+    {"id":"cse1103-02","title":"Algorithms and Flowcharts","path":"lessons/02-algorithms-and-flowcharts/lesson.md","status":"draft"}
+  ],
+  "externalResources": [],
+  "package": {
+    "releaseAsset": null,
+    "sha256": null,
+    "license": "CSE Under Box original content"
+  }
+}
