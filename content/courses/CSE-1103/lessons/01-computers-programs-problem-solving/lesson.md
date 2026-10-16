@@ -13,6 +13,8 @@ A student wants to calculate the average marks of three subjects. Before writing
 - What result should be produced?
 - What rules should the program follow?
 
+![Problem to running program](../../media/compilation-pipeline.svg)
+
 ## Concept map
 
 Problem → Analysis → Algorithm → Source Code → Compilation → Testing → Result
