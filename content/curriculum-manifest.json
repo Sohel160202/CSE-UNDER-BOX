@@ -1,0 +1,170 @@
+{
+  "schemaVersion": "1.0.0",
+  "program": {
+    "id": "ku-bsc-cse-2016",
+    "title": "B.Sc. Engineering in Computer Science and Engineering",
+    "institution": "Khulna University",
+    "durationYears": 4,
+    "terms": 8,
+    "minimumCredits": 160.25,
+    "compulsoryCredits": 142.25,
+    "optionalCredits": 18.0,
+    "source": "https://ku.ac.bd/discipline/uploads/courses/Curriculum%20for%20B.Sc.%20Engg.%28CSE%29%20-Main.pdf"
+  },
+  "terms": [
+    {
+      "year": 1,
+      "term": 1,
+      "totalCredits": 20.75,
+      "courses": [
+        {"id":"CSE-1103","title":"Structured Programming I","credits":2,"kind":"theory","status":"planned"},
+        {"id":"CSE-1104","title":"Structured Programming I Laboratory","credits":1.5,"kind":"laboratory","status":"planned"},
+        {"id":"CSE-1105","title":"Discrete Mathematics","credits":3,"kind":"theory","status":"planned"},
+        {"id":"ME-1151","title":"Mechanics and Heat Engineering","credits":3,"kind":"theory","status":"planned"},
+        {"id":"ME-1152","title":"Engineering Drawing and CAD Project","credits":0.75,"kind":"project","status":"planned"},
+        {"id":"ECE-1151","title":"Electrical Circuits","credits":3,"kind":"theory","status":"planned"},
+        {"id":"ECE-1152","title":"Electrical Circuits Laboratory","credits":0.75,"kind":"laboratory","status":"planned"},
+        {"id":"MATH-1153","title":"Calculus","credits":3,"kind":"theory","status":"planned"},
+        {"id":"PHY-1153","title":"Physics","credits":3,"kind":"theory","status":"planned"},
+        {"id":"PHY-1154","title":"Physics Laboratory","credits":0.75,"kind":"laboratory","status":"planned"}
+      ]
+    },
+    {
+      "year": 1,
+      "term": 2,
+      "totalCredits": 20.5,
+      "courses": [
+        {"id":"CSE-1201","title":"Object Oriented Programming","credits":3,"kind":"theory","status":"planned"},
+        {"id":"CSE-1202","title":"Object Oriented Programming Laboratory","credits":1.5,"kind":"laboratory","status":"planned"},
+        {"id":"CSE-1203","title":"Structured Programming II","credits":2,"kind":"theory","status":"planned"},
+        {"id":"CSE-1204","title":"Structured Programming Laboratory II","credits":1.5,"kind":"laboratory","status":"planned"},
+        {"id":"ECE-1251","title":"Electronic Devices and Circuits","credits":3,"kind":"theory","status":"planned"},
+        {"id":"ECE-1252","title":"Electronic Devices and Circuits Laboratory","credits":0.75,"kind":"laboratory","status":"planned"},
+        {"id":"MATH-1253","title":"Geometry and Differential Equations","credits":3,"kind":"theory","status":"planned"},
+        {"id":"CHEM-1251","title":"Chemistry","credits":3,"kind":"theory","status":"planned"},
+        {"id":"ENG-1251","title":"English","credits":2,"kind":"theory","status":"planned"},
+        {"id":"ENG-1252","title":"English Skills Laboratory","credits":0.75,"kind":"laboratory","status":"planned"}
+      ]
+    },
+    {
+      "year": 2,
+      "term": 1,
+      "totalCredits": 20.75,
+      "courses": [
+        {"id":"CSE-2101","title":"Data Structures","credits":3,"kind":"theory","status":"planned","prerequisites":["CSE-1203","CSE-1204"]},
+        {"id":"CSE-2102","title":"Data Structures Laboratory","credits":1.5,"kind":"laboratory","status":"planned","prerequisites":["CSE-1203","CSE-1204"]},
+        {"id":"CSE-2105","title":"Numerical Methods","credits":3,"kind":"theory","status":"planned","prerequisites":["CSE-1203","CSE-1204"]},
+        {"id":"CSE-2106","title":"Numerical Methods Laboratory","credits":0.75,"kind":"laboratory","status":"planned","prerequisites":["CSE-1203","CSE-1204"]},
+        {"id":"CSE-2111","title":"Digital Logic Design","credits":3,"kind":"theory","status":"planned"},
+        {"id":"CSE-2112","title":"Digital Logic Design Laboratory","credits":1.5,"kind":"laboratory","status":"planned"},
+        {"id":"CSE-2113","title":"Advanced Programming","credits":2,"kind":"theory","status":"planned"},
+        {"id":"ECE-2151","title":"Digital Electronics","credits":3,"kind":"theory","status":"planned"},
+        {"id":"MATH-2153","title":"Vector Analysis and Matrix","credits":3,"kind":"theory","status":"planned"}
+      ]
+    },
+    {
+      "year": 2,
+      "term": 2,
+      "totalCredits": 21.25,
+      "courses": [
+        {"id":"CSE-2201","title":"Algorithms","credits":3,"kind":"theory","status":"planned","prerequisites":["CSE-2101","CSE-2102"]},
+        {"id":"CSE-2202","title":"Algorithms Laboratory","credits":1.5,"kind":"laboratory","status":"planned","prerequisites":["CSE-2101","CSE-2102"]},
+        {"id":"CSE-2203","title":"Computer Architecture","credits":3,"kind":"theory","status":"planned","prerequisites":["CSE-2111"]},
+        {"id":"CSE-2205","title":"Operating System and Systems Programming","credits":3,"kind":"theory","status":"planned"},
+        {"id":"CSE-2206","title":"Operating System and Systems Programming Laboratory / Project","credits":1.5,"kind":"laboratory","status":"planned"},
+        {"id":"CSE-2208","title":"Assembly Language Laboratory","credits":1.5,"kind":"laboratory","status":"planned"},
+        {"id":"CSE-2211","title":"Information System Design","credits":2,"kind":"theory","status":"planned"},
+        {"id":"CSE-2212","title":"Information System Design Sessional","credits":0.75,"kind":"laboratory","status":"planned"},
+        {"id":"MATH-2253","title":"Statistics and Complex Variable","credits":3,"kind":"theory","status":"planned"},
+        {"id":"ECON-2251","title":"Economics","credits":2,"kind":"theory","status":"planned"}
+      ]
+    },
+    {
+      "year": 3,
+      "term": 1,
+      "totalCredits": 21.25,
+      "courses": [
+        {"id":"CSE-3100","title":"Technical Writing and Presentation","credits":1.5,"kind":"sessional","status":"planned"},
+        {"id":"CSE-3101","title":"Database Systems","credits":3,"kind":"theory","status":"planned"},
+        {"id":"CSE-3102","title":"Database Systems Project / Fieldwork","credits":1.5,"kind":"project","status":"planned"},
+        {"id":"CSE-3103","title":"Software Engineering","credits":2,"kind":"theory","status":"planned"},
+        {"id":"CSE-3106","title":"Software Development Project","credits":1.5,"kind":"project","status":"planned"},
+        {"id":"CSE-3111","title":"Microprocessors and Microcontrollers","credits":3,"kind":"theory","status":"planned","prerequisites":["CSE-2203"]},
+        {"id":"CSE-3112","title":"Microprocessors and Microcontrollers Laboratory / Project","credits":0.75,"kind":"laboratory","status":"planned"},
+        {"id":"ECE-3151","title":"Data Communication","credits":3,"kind":"theory","status":"planned"},
+        {"id":"MATH-3153","title":"Mathematical Analysis for Computer Science","credits":3,"kind":"theory","status":"planned"},
+        {"id":"PSY-3151","title":"Psychology","credits":2,"kind":"theory","status":"planned"}
+      ]
+    },
+    {
+      "year": 3,
+      "term": 2,
+      "totalCredits": 22.5,
+      "courses": [
+        {"id":"CSE-3200","title":"Web Programming Project / Fieldwork","credits":1.5,"kind":"project","status":"planned"},
+        {"id":"CSE-3201","title":"Artificial Intelligence","credits":3,"kind":"theory","status":"planned","prerequisites":["CSE-2201","CSE-2202"]},
+        {"id":"CSE-3202","title":"Artificial Intelligence Laboratory / Project","credits":1.5,"kind":"laboratory","status":"planned","prerequisites":["CSE-2201","CSE-2202"]},
+        {"id":"CSE-3203","title":"Computer Networks","credits":3,"kind":"theory","status":"planned"},
+        {"id":"CSE-3204","title":"Computer Networks Laboratory / Fieldwork","credits":1.5,"kind":"laboratory","status":"planned"},
+        {"id":"CSE-3205","title":"Compiler Design","credits":3,"kind":"theory","status":"planned"},
+        {"id":"CSE-3206","title":"Compiler Design Laboratory / Project","credits":0.75,"kind":"laboratory","status":"planned"},
+        {"id":"ECE-3251","title":"Electrical Drives and Instrumentation","credits":3,"kind":"theory","status":"planned"}
+      ]
+    },
+    {
+      "year": 4,
+      "term": 1,
+      "totalCredits": 16.75,
+      "courses": [
+        {"id":"CSE-4100","title":"Project / Thesis I","credits":3,"kind":"thesis","status":"planned"},
+        {"id":"CSE-4103","title":"Computer Graphics","credits":3,"kind":"theory","status":"planned"},
+        {"id":"CSE-4104","title":"Computer Graphics Laboratory / Project","credits":0.75,"kind":"laboratory","status":"planned"},
+        {"id":"CSE-4105","title":"Computer Security","credits":3,"kind":"theory","status":"planned"},
+        {"id":"BA-4151","title":"Accounting","credits":2,"kind":"theory","status":"planned"},
+        {"id":"SOC-4153","title":"Government and Sociology","credits":2,"kind":"theory","status":"planned"},
+        {"id":"OPTION-II","title":"Optional Course II","credits":3,"kind":"optional","status":"planned"},
+        {"id":"OPTION-III","title":"Industrial Training / Advanced Business Venture","credits":0,"kind":"training","status":"planned"}
+      ]
+    },
+    {
+      "year": 4,
+      "term": 2,
+      "totalCredits": 16.5,
+      "courses": [
+        {"id":"CSE-4200","title":"Project / Thesis II","credits":3,"kind":"thesis","status":"planned"},
+        {"id":"BA-4251","title":"Industrial Management and Law","credits":3,"kind":"theory","status":"planned"},
+        {"id":"OPTION-IV","title":"Optional Course IV with Sessional","credits":3.75,"kind":"optional","status":"planned"},
+        {"id":"OPTION-V","title":"Optional Course V with Sessional","credits":3.75,"kind":"optional","status":"planned"},
+        {"id":"OPTION-VI","title":"Optional Course VI","credits":3,"kind":"optional","status":"planned"}
+      ]
+    }
+  ],
+  "optionalCourses": [
+    {"id":"CSE-3221","title":"Simulation and Modeling","hasLaboratory":true},
+    {"id":"CSE-3223","title":"Neural Networks and Fuzzy Systems","hasLaboratory":true},
+    {"id":"CSE-3225","title":"Digital Image Processing","hasLaboratory":true},
+    {"id":"CSE-3227","title":"Geographical Information System","hasLaboratory":true},
+    {"id":"CSE-4121","title":"Applied Probability and Queuing Theory"},
+    {"id":"CSE-4123","title":"Parallel and Distributed Processing"},
+    {"id":"CSE-4125","title":"Computational Geometry"},
+    {"id":"CSE-4127","title":"Human Computer Interaction"},
+    {"id":"CSE-4129","title":"Distributed Database System"},
+    {"id":"CSE-4131","title":"Graph Theory"},
+    {"id":"CSE-4133","title":"Theory of Computation"},
+    {"id":"ECE-4151","title":"Digital Signal Processing"},
+    {"id":"ECE-4153","title":"VLSI Design and Testability"},
+    {"id":"ECE-4155","title":"Wireless and Optical Networks"},
+    {"id":"CSE-4221","title":"Pattern Recognition","hasLaboratory":true},
+    {"id":"CSE-4223","title":"Data Mining","hasLaboratory":true},
+    {"id":"CSE-4231","title":"Digital System Design","hasLaboratory":true},
+    {"id":"CSE-4233","title":"Client Server Technology","hasLaboratory":true},
+    {"id":"CSE-4235","title":"Computer Peripherals and Interfacing","hasLaboratory":true},
+    {"id":"CSE-4237","title":"Computer Animation and Virtual Reality","hasLaboratory":true},
+    {"id":"CSE-4241","title":"Knowledge Engineering"},
+    {"id":"CSE-4243","title":"Machine Learning"},
+    {"id":"CSE-4245","title":"Robotics and Computer Vision"},
+    {"id":"CSE-4247","title":"E-Commerce"},
+    {"id":"CSE-4249","title":"Decision Support System"},
+    {"id":"CSE-4251","title":"Multimedia"}
+  ]
+}
