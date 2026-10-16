@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">Positive, negative, or zero decision flowchart</title>
+  <desc id="desc">A flowchart showing a number tested for positive, negative, or zero.</desc>
+  <rect width="900" height="520" rx="24" fill="#f8fafc"/>
+  <g font-family="Arial, sans-serif" text-anchor="middle" stroke-width="2">
+    <rect x="370" y="28" width="160" height="52" rx="26" fill="#dbeafe" stroke="#2864d7"/>
+    <text x="450" y="60" fill="#182230" font-size="16" font-weight="700">Start / Read N</text>
+    <path d="M450 80v38" stroke="#7758d8" fill="none"/>
+    <path d="M450 118 510 178 450 238 390 178Z" fill="#ede9fe" stroke="#7758d8"/>
+    <text x="450" y="174" fill="#182230" font-size="15" font-weight="700">N &gt; 0?</text>
+    <path d="M510 178h210" stroke="#0b9f6e" fill="none"/><text x="620" y="164" fill="#0b9f6e" font-size="13">Yes</text>
+    <rect x="720" y="152" width="140" height="52" rx="15" fill="#dcfce7" stroke="#0b9f6e"/><text x="790" y="184" fill="#182230" font-size="15">Positive</text>
+    <path d="M450 238v42" stroke="#d94b68" fill="none"/><text x="470" y="265" fill="#d94b68" font-size="13">No</text>
+    <path d="M450 280 510 340 450 400 390 340Z" fill="#fff7ed" stroke="#c47a11"/>
+    <text x="450" y="336" fill="#182230" font-size="15" font-weight="700">N &lt; 0?</text>
+    <path d="M510 340h210" stroke="#0b9f6e" fill="none"/><text x="620" y="326" fill="#0b9f6e" font-size="13">Yes</text>
+    <rect x="720" y="314" width="140" height="52" rx="15" fill="#dcfce7" stroke="#0b9f6e"/><text x="790" y="346" fill="#182230" font-size="15">Negative</text>
+    <path d="M450 400v45" stroke="#d94b68" fill="none"/><text x="470" y="427" fill="#d94b68" font-size="13">No</text>
+    <rect x="380" y="445" width="140" height="52" rx="15" fill="#fef3c7" stroke="#c47a11"/><text x="450" y="477" fill="#182230" font-size="15">Zero</text>
+  </g>
+</svg>
