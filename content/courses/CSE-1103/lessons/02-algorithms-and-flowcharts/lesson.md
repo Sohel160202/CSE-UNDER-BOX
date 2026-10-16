@@ -15,6 +15,8 @@ Create a program that reports whether a number is positive, negative, or zero.
 3. Otherwise, if the number is less than zero, report negative.
 4. Otherwise, report zero.
 
+![Decision flowchart](../../media/decision-flowchart.svg)
+
 ## Flow structure
 
 Start → Read number → Is number > 0?
