@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="950" height="320" viewBox="0 0 950 320" role="img" aria-labelledby="title desc">
+  <title id="title">Pointer memory model</title>
+  <desc id="desc">A pointer variable stores the address of an integer variable.</desc>
+  <rect width="950" height="320" rx="24" fill="#f8fafc"/>
+  <g font-family="Arial, sans-serif">
+    <text x="60" y="62" fill="#182230" font-size="22" font-weight="700">A pointer stores an address, not the data itself</text>
+    <rect x="100" y="120" width="270" height="110" rx="16" fill="#ffffff" stroke="#cdddf7" stroke-width="3"/>
+    <text x="235" y="155" text-anchor="middle" fill="#2864d7" font-size="17" font-weight="700">number</text>
+    <text x="235" y="192" text-anchor="middle" fill="#182230" font-size="28">42</text>
+    <text x="235" y="216" text-anchor="middle" fill="#718096" font-size="13">address: 0x1000</text>
+    <rect x="580" y="120" width="270" height="110" rx="16" fill="#ffffff" stroke="#ede9fe" stroke-width="3"/>
+    <text x="715" y="155" text-anchor="middle" fill="#7758d8" font-size="17" font-weight="700">pointer</text>
+    <text x="715" y="192" text-anchor="middle" fill="#182230" font-size="28">0x1000</text>
+    <text x="715" y="216" text-anchor="middle" fill="#718096" font-size="13">points to number</text>
+    <path d="M380 175h180m-20-12 20 12-20 12" fill="none" stroke="#7758d8" stroke-width="4"/>
+    <text x="470" y="155" text-anchor="middle" fill="#718096" font-size="13">stores</text>
+  </g>
+</svg>
