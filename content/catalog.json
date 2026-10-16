@@ -1,0 +1,35 @@
+{
+  "catalogVersion": "0.1.0",
+  "generatedFrom": "content/curriculum-manifest.json",
+  "applicationMinimumVersion": "0.1.0",
+  "courses": [
+    {
+      "courseId": "CSE-1103",
+      "title": "Structured Programming I",
+      "packageStatus": "source-preview",
+      "version": "0.1.0",
+      "packageAsset": null,
+      "contentPath": "content/courses/CSE-1103",
+      "lessonCount": 2,
+      "resourceCount": 0,
+      "downloadable": false
+    },
+    {
+      "courseId": "CSE-1104",
+      "title": "Structured Programming I Laboratory",
+      "packageStatus": "planned",
+      "version": null,
+      "packageAsset": null,
+      "contentPath": null,
+      "lessonCount": 0,
+      "resourceCount": 0,
+      "downloadable": false
+    }
+  ],
+  "downloadPolicy": {
+    "source": "github-releases",
+    "archiveFormat": "zip",
+    "integrity": "sha256",
+    "fallback": "show-source-repository"
+  }
+}
