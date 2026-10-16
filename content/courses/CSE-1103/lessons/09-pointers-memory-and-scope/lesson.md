@@ -6,6 +6,8 @@
 - Use pointers for controlled data access and output parameters.
 - Distinguish local, global, and parameter scope.
 
+![Pointer memory model](../../media/pointer-memory.svg)
+
 ## Explanation
 
 A pointer stores the address of another object. The address operator obtains an address, and the dereference operator accesses the value at that address.
