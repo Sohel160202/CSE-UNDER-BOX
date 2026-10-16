@@ -1,0 +1,29 @@
+name: Validate CSE Under Box Content
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate JSON manifests
+        run: |
+          node -e "JSON.parse(require('fs').readFileSync('content/curriculum-manifest.json', 'utf8'))"
+          node -e "JSON.parse(require('fs').readFileSync('content/catalog.json', 'utf8'))"
+          node -e "JSON.parse(require('fs').readFileSync('content/resources/recommended.json', 'utf8'))"
+          node -e "JSON.parse(require('fs').readFileSync('content/courses/CSE-1103/course.json', 'utf8'))"
+
+      - name: Check required content
+        run: |
+          test -f README.md
+          test -f docs/ARCHITECTURE.md
+          test -f app/index.html
+          test -f content/courses/CSE-1103/lessons/01-computers-programs-problem-solving/lesson.md
+          test -f content/courses/CSE-1103/lessons/02-algorithms-and-flowcharts/lesson.md
