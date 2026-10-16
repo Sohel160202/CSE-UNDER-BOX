@@ -2,7 +2,7 @@
 
 CSE Under Box is a GitHub-first undergraduate Computer Science and Engineering learning system.
 
-The goal is to cover the complete Khulna University B.Sc. Engg. in CSE curriculum inside one lightweight Windows application. The application will provide structured lessons, diagrams, animations, code examples, laboratories, quizzes, projects, thesis guidance, and curated external resources such as YouTube lectures.
+The goal is to cover the complete Khulna University B.Sc. Engg. in CSE curriculum inside one lightweight cross-platform desktop application. The application will provide structured lessons, diagrams, animations, code examples, laboratories, quizzes, projects, thesis guidance, and curated external resources such as YouTube lectures.
 
 ## Core principles
 
@@ -50,8 +50,8 @@ This repository is an independent educational project and is not an official Khu
 - [x] Repository created
 - [x] Initial architecture documented
 - [x] Full term-wise curriculum catalog mapped
-- [ ] Desktop launcher
+- [ ] Cross-platform desktop launcher
 - [ ] Course package downloader
 - [ ] First complete course: Structured Programming I
 - [ ] YouTube resource review workflow
-- [ ] Windows release pipeline
+- [ ] Cross-platform release pipeline (Windows, macOS, Linux)
