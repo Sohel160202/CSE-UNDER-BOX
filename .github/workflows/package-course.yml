@@ -1,0 +1,57 @@
+name: Package Course
+
+on:
+  workflow_dispatch:
+    inputs:
+      course_id:
+        description: Course folder to package
+        required: true
+        default: CSE-1103
+      version:
+        description: Package version
+        required: true
+        default: 0.1.0
+  push:
+    tags:
+      - "course-*-v*"
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Resolve package identity
+        id: package
+        shell: bash
+        run: |
+          if [ -n "${{ github.event.inputs.course_id }}" ]; then
+            COURSE_ID="${{ github.event.inputs.course_id }}"
+            VERSION="${{ github.event.inputs.version }}"
+          else
+            TAG="${GITHUB_REF_NAME}"
+            COURSE_ID="${TAG%%-v*}"
+            COURSE_ID="${COURSE_ID#course-}"
+            VERSION="${TAG##*-v}"
+          fi
+          echo "course_id=$COURSE_ID" >> "$GITHUB_OUTPUT"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Validate course package exists
+        run: test -f "content/courses/${{ steps.package.outputs.course_id }}/course.json"
+
+      - name: Create package archive
+        run: |
+          mkdir -p dist
+          zip -r "dist/${{ steps.package.outputs.course_id }}-v${{ steps.package.outputs.version }}.zip"             "content/courses/${{ steps.package.outputs.course_id }}"
+          sha256sum "dist/${{ steps.package.outputs.course_id }}-v${{ steps.package.outputs.version }}.zip"             | tee "dist/${{ steps.package.outputs.course_id }}-v${{ steps.package.outputs.version }}.sha256"
+
+      - name: Publish GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" dist/*             --title "${{ steps.package.outputs.course_id }} v${{ steps.package.outputs.version }}"             --notes "Versioned CSE Under Box course package. Update content/catalog.json after review."
