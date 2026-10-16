@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSE Under Box</title>
+<style>
+:root {
+  --bg: #0a0f1e;
+  --panel: #111a2d;
+  --panel-2: #17233b;
+  --line: #263653;
+  --text: #f4f7ff;
+  --muted: #94a4bf;
+  --cyan: #55d6ff;
+  --violet: #9a7bff;
+  --green: #54e39b;
+  --amber: #ffc857;
+  --red: #ff7f91;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  color: var(--text);
+  background: radial-gradient(circle at top right, #17274c 0, var(--bg) 42%);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif;
+}
+button, input { font: inherit; }
+button { cursor: pointer; }
+.shell { min-height: 100vh; display: grid; grid-template-columns: 270px 1fr; }
+.sidebar {
+  border-right: 1px solid var(--line);
+  background: rgba(8, 14, 29, .92);
+  padding: 26px 18px;
+  display: flex;
+  flex-direction: column;
+}
+.brand { display: flex; gap: 12px; align-items: center; margin-bottom: 38px; }
+.brand-mark {
+  width: 42px; height: 42px; border-radius: 14px;
+  background: linear-gradient(135deg, var(--cyan), var(--violet));
+  display: grid; place-items: center; color: #08101d; font-weight: 900;
+}
+.brand h1 { margin: 0; font-size: 18px; letter-spacing: -.5px; }
+.brand p { margin: 3px 0 0; color: var(--muted); font-size: 11px; }
+.nav { display: grid; gap: 7px; }
+.nav button {
+  color: var(--muted); border: 1px solid transparent; background: transparent;
+  text-align: left; padding: 12px 13px; border-radius: 11px;
+}
+.nav button.active, .nav button:hover { color: var(--text); background: var(--panel-2); border-color: var(--line); }
+.side-note { margin-top: auto; padding: 14px; border: 1px solid var(--line); background: #101a2d; border-radius: 14px; }
+.side-note strong { display: block; font-size: 12px; color: var(--cyan); margin-bottom: 7px; }
+.side-note span { color: var(--muted); font-size: 12px; line-height: 1.45; }
+main { min-width: 0; }
+.topbar {
+  min-height: 74px; padding: 17px 34px; border-bottom: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+}
+.search {
+  flex: 1; max-width: 540px; display: flex; align-items: center; gap: 10px;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 0 14px;
+}
+.search input { width: 100%; padding: 12px 0; background: transparent; border: 0; outline: 0; color: var(--text); }
+.search input::placeholder { color: #70809d; }
+.profile { display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: 13px; }
+.avatar { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: #283b63; color: var(--cyan); font-weight: 800; }
+.content { padding: 34px; max-width: 1500px; }
+.eyebrow { text-transform: uppercase; letter-spacing: 1.7px; font-size: 11px; color: var(--cyan); font-weight: 800; }
+h2 { font-size: 31px; letter-spacing: -1.2px; margin: 9px 0 8px; }
+.subtitle { color: var(--muted); margin: 0; max-width: 760px; line-height: 1.55; }
+.hero { display: flex; justify-content: space-between; align-items: end; gap: 28px; margin-bottom: 28px; }
+.hero-badge { border: 1px solid #31557b; background: #10233b; padding: 12px 16px; border-radius: 14px; text-align: right; min-width: 150px; }
+.hero-badge strong { display: block; color: var(--cyan); font-size: 23px; }
+.hero-badge span { font-size: 11px; color: var(--muted); }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 28px; }
+.stat { background: rgba(17, 26, 45, .9); border: 1px solid var(--line); padding: 18px; border-radius: 16px; }
+.stat .label { color: var(--muted); font-size: 12px; }
+.stat strong { display: block; font-size: 26px; margin-top: 8px; }
+.stat .accent { color: var(--green); }
+.section-head { display: flex; justify-content: space-between; align-items: center; margin: 24px 0 13px; }
+.section-head h3 { margin: 0; font-size: 17px; }
+.section-head span { color: var(--muted); font-size: 12px; }
+.term-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px; }
+.term {
+  background: rgba(17, 26, 45, .9); border: 1px solid var(--line); border-radius: 16px; padding: 17px;
+}
+.term-head { display: flex; justify-content: space-between; gap: 10px; align-items: start; margin-bottom: 14px; }
+.term h4 { margin: 0; font-size: 16px; }
+.term small { color: var(--muted); }
+.credit { color: var(--amber); font-size: 12px; font-weight: 800; }
+.course-list { display: grid; gap: 8px; }
+.course {
+  display: grid; grid-template-columns: 72px 1fr auto; gap: 10px; align-items: center;
+  padding: 10px; border-radius: 11px; background: #0f182b; border: 1px solid transparent;
+}
+.course:hover { border-color: #33517b; }
+.course-code { color: var(--cyan); font: 700 11px ui-monospace, SFMono-Regular, Menlo, monospace; }
+.course-title { font-size: 13px; line-height: 1.3; }
+.course-meta { color: var(--muted); font-size: 11px; margin-top: 3px; }
+.status { border-radius: 99px; padding: 5px 8px; font-size: 10px; white-space: nowrap; }
+.status.ready { color: var(--green); background: #123b30; }
+.status.planned { color: var(--muted); background: #202b42; }
+.status.preview { color: var(--amber); background: #443720; }
+.course-action { border: 1px solid var(--line); background: transparent; color: var(--text); border-radius: 8px; padding: 6px 8px; font-size: 11px; }
+.course-action:hover { border-color: var(--cyan); color: var(--cyan); }
+.detail {
+  display: none; background: rgba(17, 26, 45, .96); border: 1px solid var(--line);
+  border-radius: 18px; padding: 24px; margin-bottom: 22px;
+}
+.detail.visible { display: block; }
+.detail-top { display: flex; justify-content: space-between; gap: 20px; }
+.detail h3 { margin: 6px 0; font-size: 25px; }
+.detail p { color: var(--muted); line-height: 1.55; }
+.detail-close { border: 0; background: #202d47; color: var(--muted); border-radius: 8px; width: 32px; height: 32px; }
+.lesson-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 16px; margin-top: 18px; }
+.lesson-card, .resource-card { background: #0d1627; border: 1px solid var(--line); border-radius: 13px; padding: 16px; }
+.lesson-card h4, .resource-card h4 { margin: 0 0 10px; font-size: 14px; }
+.lesson-card li { margin: 9px 0; color: var(--muted); font-size: 13px; }
+.resource-card { display: flex; justify-content: space-between; gap: 12px; align-items: center; }
+.resource-card p { margin: 3px 0 0; font-size: 12px; }
+.resource-link { color: var(--cyan); text-decoration: none; font-size: 12px; white-space: nowrap; }
+.toast { position: fixed; right: 24px; bottom: 24px; background: #172a48; border: 1px solid #42658f; padding: 13px 16px; border-radius: 12px; display: none; color: var(--text); font-size: 13px; box-shadow: 0 12px 35px #0008; }
+.toast.show { display: block; }
+@media (max-width: 950px) {
+  .shell { grid-template-columns: 1fr; }
+  .sidebar { display: none; }
+  .content { padding: 24px 18px; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .term-grid, .lesson-grid { grid-template-columns: 1fr; }
+  .hero { align-items: start; flex-direction: column; }
+  .topbar { padding: 14px 18px; }
+}
+</style>
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">C</div>
+      <div><h1>CSE Under Box</h1><p>Learn. Build. Understand.</p></div>
+    </div>
+    <nav class="nav">
+      <button class="active" data-view="curriculum">Curriculum</button>
+      <button data-view="my-learning">My Learning</button>
+      <button data-view="resources">Resource Library</button>
+      <button data-view="projects">Projects & Labs</button>
+    </nav>
+    <div class="side-note"><strong>GitHub-first learning</strong><span>Courses, lessons, resources, and future Windows releases are versioned through GitHub.</span></div>
+  </aside>
+  <main>
+    <header class="topbar">
+      <div class="search"><span>⌕</span><input id="search" placeholder="Search courses, concepts, or course codes"></div>
+      <div class="profile"><span>Student workspace</span><div class="avatar">S</div></div>
+    </header>
+    <section class="content">
+      <div class="hero">
+        <div>
+          <div class="eyebrow">Undergraduate CSE learning system</div>
+          <h2>Your entire degree, one system.</h2>
+          <p class="subtitle">A visual, practical learning environment for the complete Khulna University CSE curriculum—connected to lessons, labs, projects, code, animations, and curated resources.</p>
+        </div>
+        <div class="hero-badge"><strong>0.1.0</strong><span>GitHub source preview</span></div>
+      </div>
+      <div id="detail" class="detail"></div>
+      <div class="stats">
+        <div class="stat"><div class="label">Program length</div><strong>4 years</strong></div>
+        <div class="stat"><div class="label">Terms</div><strong>8</strong></div>
+        <div class="stat"><div class="label">Minimum credits</div><strong>160.25</strong></div>
+        <div class="stat"><div class="label">Learning progress</div><strong class="accent">0%</strong></div>
+      </div>
+      <div class="section-head"><h3>Curriculum map</h3><span id="course-count">Loading courses…</span></div>
+      <div id="terms" class="term-grid"></div>
+    </section>
+  </main>
+</div>
+<div id="toast" class="toast"></div>
+<script>
+const curriculumUrl = "https://raw.githubusercontent.com/Sohel160202/CSE-UNDER-BOX/main/content/curriculum-manifest.json";
+const catalogUrl = "https://raw.githubusercontent.com/Sohel160202/CSE-UNDER-BOX/main/content/catalog.json";
+const fallback = {
+  terms: [
+    {year: 1, term: 1, totalCredits: 20.75, courses: [
+      {id:"CSE-1103",title:"Structured Programming I",credits:2,kind:"theory",status:"planned"},
+      {id:"CSE-1104",title:"Structured Programming I Laboratory",credits:1.5,kind:"laboratory",status:"planned"},
+      {id:"CSE-1105",title:"Discrete Mathematics",credits:3,kind:"theory",status:"planned"}
+    ]},
+    {year: 1, term: 2, totalCredits: 20.5, courses: [
+      {id:"CSE-1201",title:"Object Oriented Programming",credits:3,kind:"theory",status:"planned"},
+      {id:"CSE-1203",title:"Structured Programming II",credits:2,kind:"theory",status:"planned"}
+    ]}
+  ]
+};
+let curriculum = fallback;
+let catalog = {courses: []};
+
+function esc(value) {
+  return String(value).replace(/[&<>"']/g, function(c) {
+    return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c];
+  });
+}
+function statusLabel(course) {
+  if (course.id === "CSE-1103") return "source preview";
+  return course.status === "planned" ? "planned" : course.status;
+}
+function render() {
+  const query = document.getElementById("search").value.toLowerCase().trim();
+  const terms = document.getElementById("terms");
+  let count = 0;
+  terms.innerHTML = "";
+  curriculum.terms.forEach(function(item) {
+    const filtered = item.courses.filter(function(course) {
+      return !query || (course.id + " " + course.title + " " + course.kind).toLowerCase().includes(query);
+    });
+    if (!filtered.length) return;
+    count += filtered.length;
+    const card = document.createElement("article");
+    card.className = "term";
+    let rows = "";
+    filtered.forEach(function(course) {
+      const isPreview = course.id === "CSE-1103";
+      rows += '<div class="course">' +
+        '<div class="course-code">' + esc(course.id) + '</div>' +
+        '<div><div class="course-title">' + esc(course.title) + '</div><div class="course-meta">' + esc(course.kind) + ' · ' + esc(course.credits) + ' credits</div></div>' +
+        '<div><span class="status ' + (isPreview ? "preview" : "planned") + '">' + esc(isPreview ? "source preview" : "planned") + '</span><button class="course-action" data-course="' + esc(course.id) + '">Open</button></div>' +
+        '</div>';
+    });
+    card.innerHTML = '<div class="term-head"><div><h4>Year ' + item.year + ' · Term ' + item.term + '</h4><small>' + filtered.length + ' courses in view</small></div><div class="credit">' + item.totalCredits + ' credits</div></div><div class="course-list">' + rows + '</div>';
+    terms.appendChild(card);
+  });
+  document.getElementById("course-count").textContent = count + " courses in view";
+  document.querySelectorAll("[data-course]").forEach(function(button) {
+    button.addEventListener("click", function() { openCourse(button.dataset.course); });
+  });
+}
+function openCourse(id) {
+  const course = curriculum.terms.flatMap(function(t) { return t.courses; }).find(function(c) { return c.id === id; });
+  if (!course) return;
+  const detail = document.getElementById("detail");
+  const preview = id === "CSE-1103";
+  detail.innerHTML = '<div class="detail-top"><div><div class="eyebrow">' + esc(course.id) + ' · ' + esc(course.kind) + '</div><h3>' + esc(course.title) + '</h3><p>' + (preview ? "This source-preview course is the first content package in development. It will become downloadable through a GitHub Release after the lesson, lab, quiz, and package validation pass." : "This course is mapped in the curriculum catalog and will receive its own versioned GitHub course package.") + '</p></div><button class="detail-close" aria-label="Close">×</button></div>' +
+    '<div class="lesson-grid"><div class="lesson-card"><h4>Learning experience</h4><ul><li>Concept explanations with visual diagrams</li><li>Code examples and debugging exercises</li><li>Laboratory activities and assessed projects</li><li>Progress tracked independently from the course package</li></ul></div><div class="resource-card"><div><h4>Package status</h4><p>' + (preview ? "Source files available" : "Not packaged yet") + '</p></div><a class="resource-link" href="https://github.com/Sohel160202/CSE-UNDER-BOX" target="_blank">View GitHub ↗</a></div></div>';
+  detail.classList.add("visible");
+  detail.querySelector(".detail-close").addEventListener("click", function() { detail.classList.remove("visible"); });
+  detail.scrollIntoView({behavior:"smooth", block:"start"});
+}
+function toast(message) {
+  const el = document.getElementById("toast");
+  el.textContent = message;
+  el.classList.add("show");
+  setTimeout(function() { el.classList.remove("show"); }, 2600);
+}
+async function loadData() {
+  try {
+    const response = await fetch(curriculumUrl);
+    if (response.ok) curriculum = await response.json();
+  } catch (error) { toast("Using starter curriculum data while GitHub is unavailable."); }
+  render();
+}
+document.getElementById("search").addEventListener("input", render);
+document.querySelectorAll(".nav button").forEach(function(button) {
+  button.addEventListener("click", function() {
+    document.querySelectorAll(".nav button").forEach(function(item) { item.classList.remove("active"); });
+    button.classList.add("active");
+    if (button.dataset.view !== "curriculum") toast(button.textContent + " is planned for the next build.");
+  });
+});
+loadData();
+</script>
+</body>
+</html>
