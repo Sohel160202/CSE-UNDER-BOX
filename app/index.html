@@ -238,10 +238,16 @@ function openCourse(id) {
   if (!course) return;
   const detail = document.getElementById("detail");
   const preview = id === "CSE-1103";
+  const sourceUrl = "https://github.com/Sohel160202/CSE-UNDER-BOX/tree/main/content/courses/" + id;
+  const action = preview
+    ? '<a class="resource-link" href="' + sourceUrl + '" target="_blank">Open course source ↗</a>'
+    : '<button class="course-action" id="planned-action">Coming next</button>';
   detail.innerHTML = '<div class="detail-top"><div><div class="eyebrow">' + esc(course.id) + ' · ' + esc(course.kind) + '</div><h3>' + esc(course.title) + '</h3><p>' + (preview ? "This source-preview course is the first content package in development. It will become downloadable through a GitHub Release after the lesson, lab, quiz, and package validation pass." : "This course is mapped in the curriculum catalog and will receive its own versioned GitHub course package.") + '</p></div><button class="detail-close" aria-label="Close">×</button></div>' +
-    '<div class="lesson-grid"><div class="lesson-card"><h4>Learning experience</h4><ul><li>Concept explanations with visual diagrams</li><li>Code examples and debugging exercises</li><li>Laboratory activities and assessed projects</li><li>Progress tracked independently from the course package</li></ul></div><div class="resource-card"><div><h4>Package status</h4><p>' + (preview ? "Source files available" : "Not packaged yet") + '</p></div><a class="resource-link" href="https://github.com/Sohel160202/CSE-UNDER-BOX" target="_blank">View GitHub ↗</a></div></div>';
+    '<div class="lesson-grid"><div class="lesson-card"><h4>Learning experience</h4><ul><li>Concept explanations with visual diagrams</li><li>Code examples and debugging exercises</li><li>Laboratory activities and assessed projects</li><li>Progress tracked independently from the course package</li></ul></div><div class="resource-card"><div><h4>' + (preview ? "Package status" : "Course status") + '</h4><p>' + (preview ? "Source files available" : "Not packaged yet") + '</p></div>' + action + '</div></div>';
   detail.classList.add("visible");
   detail.querySelector(".detail-close").addEventListener("click", function() { detail.classList.remove("visible"); });
+  const planned = detail.querySelector("#planned-action");
+  if (planned) planned.addEventListener("click", function() { toast("This course is mapped and will be packaged in a future GitHub Release."); });
   detail.scrollIntoView({behavior:"smooth", block:"start"});
 }
 function toast(message) {
